@@ -1,0 +1,55 @@
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      configuration:
+        type: string
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List node modules
+        continue-on-error: true
+        run: npm list
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install Angular CLI
+        run: |
+          npm install -g @angular/cli@17
+
+      - name: Restore modules
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          echo $NODE_OPTIONS
+          npm install --frozen-lockfile
+
+      - name: Lint
+        run: ng lint
+
+      - name: Build
+        run: |
+          echo "Using environment: ${{ inputs.configuration }}"
+          ng build --configuration ${{ inputs.configuration }}
