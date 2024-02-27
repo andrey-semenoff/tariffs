@@ -1,0 +1,20 @@
+@import colors
+@import mixins
+
+:host
+    position: sticky
+    top: 0
+    @include unitize-padding(15, 0)
+    background-color: #fff
+    box-shadow: 0 0 10px 0 $color-secondary
+
+.logo
+    font-weight: bold
+    @include unitize(font-size, 20)
+
+    &:first-letter, span
+        color: $color-primary
+        font-weight: bold
+
+    &:first-letter
+        font-size: pxToRem(40)
