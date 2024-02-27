@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "test": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadless",
     "lint": "ng lint"
   },
   "private": true,
@@ -37,6 +37,7 @@
     "@typescript-eslint/parser": "6.19.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.0.0",
     "eslint-plugin-prettier": "^5.1.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

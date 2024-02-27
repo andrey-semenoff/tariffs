@@ -1,30 +1,27 @@
 <form [formGroup]="filterSotringFormGroup" class="filters-sorting">
-    <div class="filters">
-       <span>Filters:</span>
-    </div>
+  <div class="filters">
+    <span>Filters:</span>
+  </div>
 
-    <div class="sorting">
-        <span>Sort by:</span>
-        <select formControlName="sorting">
-            <option value="rating">Popular</option>
-            <option value="price_down">Price (hign to low)</option>
-            <option value="price_up">Price (low to hign)</option>
-            <option value="speed_down">Download speed (high to low)</option>
-            <option value="speed_up">Download speed (low to hign)</option>
-        </select>
-    </div>
+  <div class="sorting">
+    <span>Sort by:</span>
+    <select formControlName="sorting">
+      <option value="rating">Popular</option>
+      <option value="price_down">Price (hign to low)</option>
+      <option value="price_up">Price (low to hign)</option>
+      <option value="speed_down">Download speed (high to low)</option>
+      <option value="speed_up">Download speed (low to hign)</option>
+    </select>
+  </div>
 </form>
 <div class="tariffs-list">
-    @if(tariffs) {
-        @for(tariff of tariffs; track tariff.id; let idx = $index) {
-            <app-tariff-item
-                [idx]="idx"
-                [tariff]="tariff"
-            ></app-tariff-item>
-        } @empty {
-            <div class="tariffs-list__empty">Currently no tariffs</div>
-        }    
-    } @else {
-        <div class="tariffs-list__loading">Loading...</div>
+  @if (tariffs) {
+    @for (tariff of tariffs; track tariff.id; let idx = $index) {
+      <app-tariff-item [idx]="idx" [tariff]="tariff"></app-tariff-item>
+    } @empty {
+      <div class="tariffs-list__empty">Currently no tariffs</div>
     }
+  } @else {
+    <div class="tariffs-list__loading">Loading...</div>
+  }
 </div>

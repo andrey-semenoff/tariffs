@@ -4,43 +4,48 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TariffListComponent } from './components/tariff-list/tariff-list.component';
-import { provideHttpClientTesting } 
-    from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   template: '',
 })
-class HeaderComponentMock {}
+class MockHeaderComponent {}
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   template: '',
 })
-class FooterComponentMock {}
+class MockFooterComponent {}
 
 @Component({
   selector: 'app-tariff-list',
   standalone: true,
-  template: ''
+  template: '',
 })
-class TariffListComponentMock {}
+class MockTariffListComponent {}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
-      providers: [
-        provideHttpClientTesting()
-      ]
+      providers: [provideHttpClientTesting()],
     })
-    .overrideComponent(AppComponent, {
-      remove: { imports: [HeaderComponent, FooterComponent, TariffListComponent] },
-      add: { imports: [HeaderComponentMock, FooterComponentMock, TariffListComponentMock] }
-    })
-    .compileComponents();
+      .overrideComponent(AppComponent, {
+        remove: {
+          imports: [HeaderComponent, FooterComponent, TariffListComponent],
+        },
+        add: {
+          imports: [
+            MockHeaderComponent,
+            MockFooterComponent,
+            MockTariffListComponent,
+          ],
+        },
+      })
+      .compileComponents();
   });
 
   it('should create the app', () => {

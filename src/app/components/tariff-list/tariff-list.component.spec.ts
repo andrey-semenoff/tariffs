@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, provideHttpClientTesting } 
-    from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { TariffListComponent } from './tariff-list.component';
 import { TariffService } from '../../services/tariff.service';
 import { Tariff } from '../../services/tariff-service.types';
@@ -19,10 +21,12 @@ describe('TariffListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TariffListComponent, HttpClientTestingModule],
-      providers: [provideHttpClientTesting(),{provide: TariffService, useClass: MockTariffService}]
-    })
-    .compileComponents();
-    
+      providers: [
+        provideHttpClientTesting(),
+        { provide: TariffService, useClass: MockTariffService },
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TariffListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
