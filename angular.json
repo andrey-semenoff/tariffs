@@ -105,7 +105,12 @@
               "src/styles.sass",
               "src/assets/styles/all.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            }
           }
         },
         "lint": {

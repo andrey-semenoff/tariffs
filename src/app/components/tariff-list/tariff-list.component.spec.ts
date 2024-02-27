@@ -1,6 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, provideHttpClientTesting } 
+    from '@angular/common/http/testing';
 import { TariffListComponent } from './tariff-list.component';
+import { TariffService } from '../../services/tariff.service';
+import { Tariff } from '../../services/tariff-service.types';
+import { of, Observable } from 'rxjs';
+
+class MockTariffService {
+  getTariffs(): Observable<Tariff[]> {
+    return of([]);
+  }
+}
 
 describe('TariffListComponent', () => {
   let component: TariffListComponent;
@@ -8,7 +18,8 @@ describe('TariffListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TariffListComponent]
+      imports: [TariffListComponent, HttpClientTestingModule],
+      providers: [provideHttpClientTesting(),{provide: TariffService, useClass: MockTariffService}]
     })
     .compileComponents();
     

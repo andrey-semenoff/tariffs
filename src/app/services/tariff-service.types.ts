@@ -17,7 +17,7 @@ export interface TariffFeature {
   type: TariffFeatureType;
   name: string;
   value: unknown;
-  options: TariffFeatureOption[];
+  options?: TariffFeatureOption[];
 }
 
 export interface TariffBenefit {
