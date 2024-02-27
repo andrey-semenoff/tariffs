@@ -1,0 +1,22 @@
+@import fonts
+
+@function pxToRem($px, $withUnit: true)
+    $result: $px / $baseFontSize
+    @if $withUnit
+        $result: $result + rem
+    @return $result
+
+@mixin unitize($prop, $px)
+    #{$prop}: #{pxToRem($px, false)}rem
+
+@function iterateParams($params)
+    $result: null
+    @each $param in $params
+        $result: $result pxToRem($param)
+    @return $result
+
+@mixin unitize-padding($args...)
+    padding: iterateParams($args)
+
+@mixin unitize-margin($args...)
+    margin: iterateParams($args)

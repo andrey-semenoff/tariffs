@@ -1,0 +1,13 @@
+@import colors
+@import mixins
+
+.button
+    @include unitize-padding(5, 15)
+    box-shadow: 2px 2px 1px 0 #333
+
+    &:hover
+        cursor: pointer
+
+    &:active
+        box-shadow: none
+        transform: translate(2px, 2px)
