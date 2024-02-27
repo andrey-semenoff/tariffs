@@ -1,0 +1,21 @@
+@import mixins
+
+.filters-sorting
+    display: flex
+    justify-content: space-between
+    @include unitize(gap, 12)
+    @include unitize(margin-top, 24)
+
+.filters
+    display: flex
+    @include unitize(gap, 8)
+
+.sorting
+    display: flex
+    @include unitize(gap, 8)
+
+.tariffs-list
+    display: flex
+    flex-direction: column
+    @include unitize(gap, 12)
+    @include unitize(margin-top, 24)

@@ -1,0 +1,42 @@
+@import colors
+@import mixins
+
+:host
+    display: grid
+    grid-template-columns: auto 2fr 3fr 4fr auto
+    @include unitize(gap, 8)
+    border: 1px solid #000
+
+.tariff-item
+    &__section
+        @include unitize-padding(10, 15)
+
+        &_idx
+            border-right: 1px solid #000
+
+        &_title
+            font-weight: bold
+
+        &_features
+            display: flex
+            flex-direction: column
+            @include unitize(gap, 8)
+
+        &_benefits
+            display: flex
+            flex-direction: column
+            @include unitize(gap, 8)
+
+        &_tail
+            display: flex
+            flex-direction: column
+            align-items: flex-end
+            margin-left: auto
+
+    &__price
+        @include unitize(font-size, 20)
+        font-weight: bold
+
+    &__button
+        @include unitize(min-width, 200)
+        @include unitize(margin-top, 12)

@@ -1,0 +1,30 @@
+<div class="tariff-item__section tariff-item__section_idx">{{ idx + 1 }}</div>
+<div class="tariff-item__section tariff-item__section_title">
+    {{ tariff.title }}
+</div>
+<div class="tariff-item__section tariff-item__section_features">
+    @for(feat of tariff.features; track feat.type) {
+        @switch (feat.type) {
+            @case (TariffFeatureType.ConnectionType) {
+                <span>Connection type: {{ feat.name }}</span>
+            }
+
+            @case (TariffFeatureType.DownloadSpeed) {
+                <span>DownloadSpeed: {{ feat.name }}</span>
+            }
+
+            @case (TariffFeatureType.UploadSpeed) {
+                <span>UploadSpeed: {{ feat.name }}</span>
+            }
+        }
+    }
+</div>
+<div class="tariff-item__section tariff-item__section_benefits">
+    @for(benefit of tariff.benefits; track benefit.text) {
+        <span>{{ benefit.text }}</span>
+    }
+</div>
+<div class="tariff-item__section tariff-item__section_tail">
+    <div class="tariff-item__price">1234.12 $</div>
+    <button class="button tariff-item__button">To Tariff &gt;</button>
+</div>
