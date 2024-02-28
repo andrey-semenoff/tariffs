@@ -251,5 +251,258 @@
       }
     ],
     "rating": 0.8
+  },
+  {
+    "id": "t6",
+    "title": "Tariff 6",
+    "price": {
+      "value": 100,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "DSL",
+        "value": "DSL"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 60,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 30,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Most popular"
+      }
+    ],
+    "rating": 0.2
+  },
+  {
+    "id": "t7",
+    "title": "Tariff 7 - SUPER",
+    "price": {
+      "value": 80,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "DSL",
+        "value": "DSL"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 80,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 50,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Cheapest tariff"
+      }
+    ],
+    "rating": 0.7
+  },
+  {
+    "id": "t8",
+    "title": "Tariff 8 - Mega-Tariff",
+    "price": {
+      "value": 140,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "Fiber",
+        "value": "Fiber-Optic"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 140,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 140,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Maximum performance"
+      },
+      {
+        "text": "Symmetric speed"
+      },
+      {
+        "text": "No lags"
+      }
+    ],
+    "rating": 0.1
+  },
+  {
+    "id": "t9",
+    "title": "Tariff 9 - For children",
+    "price": {
+      "value": 15.99,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "Fiber",
+        "value": "Fiber-Optic"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 10,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 10,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Maximum performance"
+      },
+      {
+        "text": "Symmetric speed"
+      },
+      {
+        "text": "No lags"
+      }
+    ],
+    "rating": 0.3
+  },
+  {
+    "id": "t10",
+    "title": "Tariff 10 - GPS",
+    "price": {
+      "value": 5.99,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "Fiber",
+        "value": "Fiber-Optic"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 5,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 5,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Maximum performance"
+      },
+      {
+        "text": "Symmetric speed"
+      },
+      {
+        "text": "No lags"
+      }
+    ],
+    "rating": 0.1
   }
 ]

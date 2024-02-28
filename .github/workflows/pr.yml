@@ -5,6 +5,10 @@ on:
   push:
   workflow_dispatch:
 
+concurrency:
+  group: fe-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     uses: ./.github/workflows/build.yml

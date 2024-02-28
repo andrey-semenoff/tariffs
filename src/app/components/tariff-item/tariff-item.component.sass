@@ -3,11 +3,16 @@
 
 :host
     display: grid
-    grid-template-columns: auto 2fr 3fr 4fr auto
+    grid-template-columns: auto 1fr auto
     @include unitize(gap, 8)
     border: 1px solid #000
 
 .tariff-item
+    &__middle-sections
+        width: 100%
+        display: grid
+        grid-template-columns: 2fr 2fr 3fr
+
     &__section
         @include unitize-padding(10, 15)
 
@@ -37,16 +42,70 @@
 
     &__price
         @include unitize(font-size, 30)
+        @include unitize(font-size, 30)
         font-weight: bold
+        white-space: nowrap
 
     &__button
         @include unitize(min-width, 200)
         @include unitize(margin-top, 12)
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 992px)
     :host
         display: grid
-        grid-template-columns: auto 2fr 3fr auto
+        grid-template-columns: auto 3fr auto
 
-    .tariff-item__section_benefits
-        display: none
+    .tariff-item
+        &__middle-sections
+            width: 100%
+            display: grid
+            grid-template-columns: 2fr 3fr
+
+        &__section_benefits
+            display: none
+
+@media screen and (max-width: 768px)
+    .tariff-item
+        &__button
+            min-width: auto
+
+@media screen and (max-width: 640px)
+    :host
+        display: grid
+        grid-template-columns: auto 1fr auto
+        @include unitize(min-height, 70)
+
+    .tariff-item
+
+        &__section
+            @include unitize-padding(5, 10)
+
+            &_idx
+                @include unitize-padding(4)
+
+        &__button
+            min-width: auto
+            margin-top: 0
+
+        &__connection-type, &__upload-speed
+            display: none
+
+        &__section_tail
+            flex-direction: row
+            align-items: stretch
+            @include unitize(gap, 8)
+
+        &__price
+            @include unitize(font-size, 20)
+
+        &__button
+            @include unitize-padding(5)
+
+            span
+                display: none
+
+@media screen and (max-width: 480px)
+    .tariff-item
+        &__middle-sections
+            display: flex
+            flex-direction: column
