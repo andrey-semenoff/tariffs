@@ -55,7 +55,7 @@ export class TariffListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTariffs();
-    this.filterSotringFormGroup.valueChanges.subscribe(form => {
+    this.filterSotringFormGroup.valueChanges.subscribe(() => {
       this.loadTariffs();
     });
   }

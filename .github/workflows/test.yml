@@ -1,20 +1,11 @@
 name: Unit testing
 
-<<<<<<< HEAD
-on:
-  workflow_call
-=======
 on: workflow_call
->>>>>>> 744128fece7893755f7ea44c390cbba52c27b3db
 
 jobs:
   test:
     runs-on: ubuntu-latest
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 744128fece7893755f7ea44c390cbba52c27b3db
     steps:
       - uses: actions/checkout@v3
 
@@ -52,8 +43,4 @@ jobs:
           npm install --frozen-lockfile
 
       - name: Test
-<<<<<<< HEAD
-        run: ng test
-=======
         run: npm run test
->>>>>>> 744128fece7893755f7ea44c390cbba52c27b3db

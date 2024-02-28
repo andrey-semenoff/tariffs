@@ -8,10 +8,9 @@ describe('TariffSpeedWidgetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TariffSpeedWidgetComponent]
-    })
-    .compileComponents();
-    
+      imports: [TariffSpeedWidgetComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TariffSpeedWidgetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

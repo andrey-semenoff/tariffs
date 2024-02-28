@@ -53,8 +53,8 @@ export class TariffService implements ITariffService {
     const type = sortingOptions.type;
     const dir = sortingOptions.direction;
     return [...tariffs].sort((tariffA, tariffB) => {
-      let a = this.mapSortingTypeOnTariffValue(tariffA, type);
-      let b = this.mapSortingTypeOnTariffValue(tariffB, type);
+      const a = this.mapSortingTypeOnTariffValue(tariffA, type);
+      const b = this.mapSortingTypeOnTariffValue(tariffB, type);
       return dir === 'desc' ? this.sortDesc(a, b) : this.sortAsc(a, b);
     });
   }
