@@ -1,0 +1,21 @@
+@import mixins
+
+.tariff-speed-widget
+    width: 100%
+    &__name
+
+    &__view
+        display: flex
+        width: 100%
+
+        &-direction
+            @include unitize-padding(5, 50)
+            border: 1px solid #000
+            text-align: center
+        &-speed
+            @include unitize(min-width, 120)
+            @include unitize-padding(5, 10)
+            border: 1px solid #000
+            @include unitize(border-top-right-radius, 20)
+            @include unitize(border-bottom-right-radius, 20)
+            text-align: center

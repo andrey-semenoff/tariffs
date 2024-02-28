@@ -1,0 +1,11 @@
+<div class="tariff-speed-widget__name">
+  {{ type === 'download' ? 'Download' : 'Upload' }}
+</div>
+<div class="tariff-speed-widget__view">
+  <div
+    class="tariff-speed-widget__view-direction"
+    [innerHTML]="type === 'download' ? '&uarr;' : '&darr;'"></div>
+  <div class="tariff-speed-widget__view-speed">
+    {{ speedFeature | formatConnectionSpeed }}
+  </div>
+</div>

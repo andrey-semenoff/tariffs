@@ -10,6 +10,11 @@
     display: flex
     @include unitize(gap, 8)
 
+    &__groups
+        display: flex
+        align-items: center
+        @include unitize(gap, 15)
+
 .sorting
     display: flex
     @include unitize(gap, 8)
@@ -19,3 +24,11 @@
     flex-direction: column
     @include unitize(gap, 12)
     @include unitize(margin-top, 24)
+
+.form-radio-group
+    display: flex
+    align-items: center
+    @include unitize(gap, 5)
+
+    input[type=radio]
+        margin: 0

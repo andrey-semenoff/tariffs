@@ -2,7 +2,10 @@ import { Observable } from 'rxjs';
 import { Money } from '../app.types';
 
 export interface ITariffService {
-  getTariffs: () => Observable<Tariff[]>;
+  getTariffs: (
+    filters: TariffFilterOptions,
+    sorting: TariffSortingOptions
+  ) => Observable<Tariff[]>;
 }
 
 export interface Tariff {
@@ -11,6 +14,7 @@ export interface Tariff {
   price: Money;
   features: TariffFeature[];
   benefits: TariffBenefit[];
+  rating: number;
 }
 
 export interface TariffFeature {
@@ -33,4 +37,19 @@ export enum TariffFeatureType {
 export interface TariffFeatureOption {
   key: string;
   value: unknown;
+}
+
+export type TariffFilterType = 'connectionType';
+
+export type TariffSortingType = 'rating' | 'price' | 'downloadSpeed';
+
+export type TariffSortingDirection = 'asc' | 'desc';
+
+export type TariffFilterOptions = Partial<
+  Record<TariffFilterType, string | null>
+>;
+
+export interface TariffSortingOptions {
+  type: TariffSortingType;
+  direction: TariffSortingDirection;
 }
