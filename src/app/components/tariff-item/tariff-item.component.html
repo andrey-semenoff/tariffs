@@ -1,36 +1,42 @@
 <div class="tariff-item__section tariff-item__section_idx">{{ idx + 1 }}</div>
-<div class="tariff-item__section tariff-item__section_title">
-  {{ tariff.title }}
-</div>
-<div class="tariff-item__section tariff-item__section_features">
-  @for (feat of tariff.features; track feat.type) {
-    @switch (feat.type) {
-      @case (TariffFeatureType.ConnectionType) {
-        <span>Connection type: {{ feat.value }}</span>
-      }
+<div class="tariff-item__middle-sections">
+  <div class="tariff-item__section tariff-item__section_title">
+    {{ tariff.title }}
+  </div>
+  <div class="tariff-item__section tariff-item__section_features">
+    @for (feat of tariff.features; track feat.type) {
+      @switch (feat.type) {
+        @case (TariffFeatureType.ConnectionType) {
+          <span class="tariff-item__connection-type">Connection type: {{ feat.value }}</span>
+        }
 
-      @case (TariffFeatureType.DownloadSpeed) {
-        <app-tariff-speed-widget
-          [type]="'download'"
-          [speedFeature]="feat"></app-tariff-speed-widget>
-      }
+        @case (TariffFeatureType.DownloadSpeed) {
+          <app-tariff-speed-widget
+            [type]="'download'"
+            [speedFeature]="feat"
+            class="tariff-item__download-speed"
+          ></app-tariff-speed-widget>
+        }
 
-      @case (TariffFeatureType.UploadSpeed) {
-        <app-tariff-speed-widget
-          [type]="'upload'"
-          [speedFeature]="feat"></app-tariff-speed-widget>
+        @case (TariffFeatureType.UploadSpeed) {
+          <app-tariff-speed-widget
+            [type]="'upload'"
+            [speedFeature]="feat"
+            class="tariff-item__upload-speed"
+          ></app-tariff-speed-widget>
+        }
       }
     }
-  }
-</div>
-<div class="tariff-item__section tariff-item__section_benefits">
-  <ul>
-    @for (benefit of tariff.benefits; track benefit.text) {
-      <li>{{ benefit.text }}</li>
-    }
-  </ul>
+  </div>
+  <div class="tariff-item__section tariff-item__section_benefits">
+    <ul>
+      @for (benefit of tariff.benefits; track benefit.text) {
+        <li>{{ benefit.text }}</li>
+      }
+    </ul>
+  </div>
 </div>
 <div class="tariff-item__section tariff-item__section_tail">
   <div class="tariff-item__price">{{ tariff.price | formatMoney }}</div>
-  <button class="button tariff-item__button">To Tariff &gt;</button>
+  <button class="button tariff-item__button"><span>To Tariff</span> &gt;</button>
 </div>
