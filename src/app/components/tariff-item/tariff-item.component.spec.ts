@@ -9,10 +9,9 @@ describe('TariffItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TariffItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [TariffItemComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TariffItemComponent);
     component = fixture.componentInstance;
   });
@@ -24,45 +23,45 @@ describe('TariffItemComponent', () => {
       price: {
         value: 111.22,
         currency: {
-          symbol: "€",
-          unit: "EUR",
-          shortName: "EURO"
-        }
+          symbol: '€',
+          unit: 'EUR',
+          shortName: 'EURO',
+        },
       },
       features: [
+        {
+          type: TariffFeatureType.ConnectionType,
+          name: 'DSL',
+          value: 'DSL',
+        },
+        {
+          type: TariffFeatureType.DownloadSpeed,
+          name: 'Download speed',
+          value: 50,
+          options: [
             {
-                type: TariffFeatureType.ConnectionType,
-                name: "DSL",
-                value: "DSL"
+              key: 'unit',
+              value: 'Mbit/s',
             },
+          ],
+        },
+        {
+          type: TariffFeatureType.UploadSpeed,
+          name: 'Upload speed',
+          value: 10,
+          options: [
             {
-                type: TariffFeatureType.DownloadSpeed,
-                name: "Download speed",
-               	value: 50,
-                options: [
-                    {
-                        key: "unit",
-                        value: "Mbit/s"
-                    }
-                ]
+              key: 'unit',
+              value: 'Mbit/s',
             },
-            {
-                type: TariffFeatureType.UploadSpeed,
-                name: "Upload speed",
-                value: 10,
-                options: [
-                    {
-                        key: "unit",
-                        value: "Mbit/s"
-                    }
-                ]
-            }
-        ],
-        benefits: [
-            {
-                text: "Most popular"
-            }
-        ]
+          ],
+        },
+      ],
+      benefits: [
+        {
+          text: 'Most popular',
+        },
+      ],
     };
     fixture.detectChanges();
     expect(component).toBeTruthy();

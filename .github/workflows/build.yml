@@ -11,7 +11,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@3
+=======
+      - uses: actions/checkout@v3
+>>>>>>> 744128fece7893755f7ea44c390cbba52c27b3db
 
       - name: Cache node modules
         id: cache-npm
@@ -52,4 +56,8 @@ jobs:
       - name: Build
         run: |
           echo "Using environment: ${{ inputs.configuration }}"
+<<<<<<< HEAD
           ng build --configuration ${{ inputs.configuration }}
+=======
+          ng build --configuration ${{ inputs.configuration }}
+>>>>>>> 744128fece7893755f7ea44c390cbba52c27b3db

@@ -1,7 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { TariffService } from './tariff.service';
-import { HttpClientTestingModule, provideHttpClientTesting } 
-    from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 
 describe('TariffService', () => {
   let service: TariffService;
@@ -9,7 +11,7 @@ describe('TariffService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [provideHttpClientTesting()]
+      providers: [provideHttpClientTesting()],
     });
     service = TestBed.inject(TariffService);
   });
