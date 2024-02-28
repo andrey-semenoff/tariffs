@@ -20,6 +20,7 @@ describe('TariffItemComponent', () => {
     component.tariff = {
       id: 'mockId',
       title: 'Mock tariff',
+      rating: 1,
       price: {
         value: 111.22,
         currency: {

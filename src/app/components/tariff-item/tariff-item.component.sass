@@ -9,7 +9,6 @@
 
 .tariff-item
     &__section
-        margin: 0
         @include unitize-padding(10, 15)
 
         &_idx
@@ -37,9 +36,17 @@
             margin-left: auto
 
     &__price
-        @include unitize(font-size, 20)
+        @include unitize(font-size, 30)
         font-weight: bold
 
     &__button
         @include unitize(min-width, 200)
         @include unitize(margin-top, 12)
+
+@media screen and (max-width: 768px)
+    :host
+        display: grid
+        grid-template-columns: auto 2fr 3fr auto
+
+    .tariff-item__section_benefits
+        display: none

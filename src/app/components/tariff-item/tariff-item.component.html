@@ -23,11 +23,13 @@
     }
   }
 </div>
-<ul class="tariff-item__section tariff-item__section_benefits">
-  @for (benefit of tariff.benefits; track benefit.text) {
-    <li>{{ benefit.text }}</li>
-  }
-</ul>
+<div class="tariff-item__section tariff-item__section_benefits">
+  <ul>
+    @for (benefit of tariff.benefits; track benefit.text) {
+      <li>{{ benefit.text }}</li>
+    }
+  </ul>
+</div>
 <div class="tariff-item__section tariff-item__section_tail">
   <div class="tariff-item__price">{{ tariff.price | formatMoney }}</div>
   <button class="button tariff-item__button">To Tariff &gt;</button>

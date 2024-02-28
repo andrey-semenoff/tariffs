@@ -91,7 +91,7 @@
         "text": "Cheapest tariff"
       }
     ],
-    "rating": 0.8
+    "rating": 0.7
   },
   {
     "id": "t3",
@@ -145,5 +145,111 @@
       }
     ],
     "rating": 0.1
+  },
+  {
+    "id": "t4",
+    "title": "Tariff 4",
+    "price": {
+      "value": 75.43,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "Fiber",
+        "value": "Fiber-Optic"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 100,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 100,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Maximum performance"
+      },
+      {
+        "text": "Symmetric speed"
+      },
+      {
+        "text": "No lags"
+      }
+    ],
+    "rating": 0.3
+  },
+  {
+    "id": "t5",
+    "title": "Tariff 5",
+    "price": {
+      "value": 150,
+      "currency": {
+        "symbol": "€",
+        "unit": "EUR",
+        "shortName": "EURO"
+      }
+    },
+    "features": [
+      {
+        "type": "ConnectionType",
+        "name": "Fiber",
+        "value": "Fiber-Optic"
+      },
+      {
+        "type": "DownloadSpeed",
+        "name": "Download speed",
+        "value": 150,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      },
+      {
+        "type": "UploadSpeed",
+        "name": "Upload speed",
+        "value": 150,
+        "options": [
+          {
+            "key": "unit",
+            "value": "Mbit/s"
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "text": "Maximum performance"
+      },
+      {
+        "text": "Symmetric speed"
+      },
+      {
+        "text": "No lags"
+      }
+    ],
+    "rating": 0.8
   }
 ]

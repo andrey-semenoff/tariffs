@@ -9,7 +9,7 @@
 
         &-direction
             @include unitize-padding(5, 50)
-            border: 1px solid #000
+            border: 3px solid #000
             text-align: center
         &-speed
             @include unitize(min-width, 120)
@@ -18,3 +18,7 @@
             @include unitize(border-top-right-radius, 20)
             @include unitize(border-bottom-right-radius, 20)
             text-align: center
+
+@media screen and (max-width: 768px)
+    .tariff-speed-widget__name
+        display: none

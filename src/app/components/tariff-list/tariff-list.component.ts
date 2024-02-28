@@ -69,7 +69,6 @@ export class TariffListComponent implements OnInit {
       .pipe(finalize(() => {}))
       .subscribe({
         next: (tariffs: Tariff[]) => {
-          // console.log(tariffs);
           this.tariffs = tariffs;
         },
         error: () => {
